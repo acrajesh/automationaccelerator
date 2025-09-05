@@ -1,5 +1,5 @@
 
-# AutomationAccelerator (packaged)
+# AutomationAccelerators
 
 CLI tools for mainframe modernization:
 - Third-party utilities discovery (JCL/COBOL/ASM)
