@@ -1,0 +1,5 @@
+
+recursive-include src/automationaccelerator/config *.yaml *.txt
+recursive-include src/automationaccelerator/data *
+include src/automationaccelerator/*.yaml
+include src/automationaccelerator/*.yaml.bak

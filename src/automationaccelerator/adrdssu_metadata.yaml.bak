@@ -1,0 +1,86 @@
+ADRDSSU:
+  Statements:
+    COPY DATASET:
+      Supported:
+        - DELETE
+        - DATASET(EXCLUDE)
+        - DATASET(INCLUDE)
+        - REPLACEUNCONDITIONAL
+        - UNCATALOG
+      Not supported:
+        - DATASET(BY)
+        - DATASET(FILTERDD)
+      Accepted but ignored:
+        - ADMINISTRATOR
+        - ALLDATA
+        - ALLEXCP
+        - CANCELERROR
+        - CATALOG
+        - FREESPACE
+        - FULL
+        - INDDNAME
+        - OPTIMIZE
+        - OUTDDNAME
+        - PERCENTUTILIZED
+        - RENAME
+        - RENAMEUNCONDITIONAL
+        - REPLACE
+        - SPHERE
+        - TGTALLOC
+        - TOLERATE
+        - TRACKS
+        - WAIT
+    COPYDUMP:
+      Supported:
+        - INDDNAME
+        - OUTDDNAME
+      Not supported: []
+      Accepted but ignored: []
+    DUMP:
+      Supported:
+        - COMPRESS
+        - DATASET(EXCLUDE)
+        - DATASET(INCLUDE)
+        - DELETE
+        - OUTDDNAME
+        - UNCATALOG
+      Not supported:
+        - DATASET(BY)
+        - DATASET(FILTERDD)
+      Accepted but ignored:
+        - ADMINISTRATOR
+        - ALLDATA
+        - ALLEXCP
+        - CANCELERROR
+        - FULL
+        - INDDNAME
+        - OPTIMIZE
+        - SPHERE
+        - TOLERATE
+        - TRACKS
+        - WAIT
+    RESTORE:
+      Supported:
+        - DATASET(EXCLUDE)
+        - DATASET(INCLUDE)
+        - INDDNAME
+        - RENAME
+        - RENAMEUNCONDITIONAL
+        - REPLACE
+        - REPLACEUNCONDITIONAL
+      Not supported:
+        - DATASET(BY)
+        - DATASET(FILTERDD)
+      Accepted but ignored:
+        - ADMINISTRATOR
+        - CANCELERROR
+        - CATALOG
+        - FREESPACE
+        - FULL
+        - OUTDDNAME
+        - PERCENTUTILIZED
+        - SPHERE
+        - TGTALLOC
+        - TOLERATE
+        - TRACKS
+        - WAIT

@@ -1,0 +1,438 @@
+ADRDSSU:
+  Supported Statements:
+    COPY DATASET:
+      Options/Clauses:
+        ADMINISTRATOR: Accepted but ignored
+        ALLDATA: Accepted but ignored (not applicable on target)
+        ALLEXCP: Accepted but ignored (not applicable on target)
+        CANCELERROR: Accepted but ignored
+        CATALOG: Accepted but ignored
+        DATASET(BY): Not supported
+        DATASET(EXCLUDE): Supported
+        DATASET(FILTERDD): Not supported
+        DATASET(INCLUDE): Supported
+        DELETE: Supported
+        FREESPACE: Accepted but ignored (not applicable on target)
+        FULL: Accepted but ignored
+        INDDNAME: Accepted but ignored (not applicable on target)
+        OPTIMIZE: Accepted but ignored
+        OUTDDNAME: Accepted but ignored (not applicable on target)
+        PERCENTUTILIZED: Accepted but ignored (not applicable on target)
+        RENAME: Accepted but ignored (because RENAMEUNCONDITIONAL is currently required)
+        RENAMEUNCONDITIONAL: Required (because there is no concept of volume-to-volume
+          copy)
+        REPLACE: Accepted but ignored
+        REPLACEUNCONDITIONAL: Supported
+        SPHERE: Accepted but ignored (not applicable on target)
+        TGTALLOC: Accepted but ignored (not applicable on target)
+        TOLERATE: Accepted but ignored
+        TRACKS: Accepted but ignored (not applicable on target)
+        UNCATALOG: Supported (treated the same as DELETE for non-VSAM datasets)
+        WAIT: Accepted but ignored
+    COPYDUMP:
+      Options/Clauses:
+        INDDNAME: Supported
+        OUTDDNAME: Supported
+    DUMP:
+      Options/Clauses:
+        ADMINISTRATOR: Accepted but ignored
+        ALLDATA: Accepted but ignored (not applicable on target)
+        ALLEXCP: Accepted but ignored (not applicable on target)
+        CANCELERROR: Accepted but ignored
+        COMPRESS: Supported
+        DATASET(BY): Not supported
+        DATASET(EXCLUDE): Supported
+        DATASET(FILTERDD): Not supported
+        DATASET(INCLUDE): Supported
+        DELETE: Supported
+        FULL: Accepted but ignored
+        INDDNAME: Accepted but ignored (not applicable on target)
+        OPTIMIZE: Accepted but ignored
+        OUTDDNAME: Supported
+        SPHERE: Accepted but ignored (not applicable on target)
+        TOLERATE: Accepted but ignored
+        TRACKS: Accepted but ignored (not applicable on target)
+        UNCATALOG: Supported (treated the same as DELETE for non-VSAM datasets)
+        WAIT: Accepted but ignored
+    RESTORE:
+      Options/Clauses:
+        ADMINISTRATOR: Accepted but ignored
+        CANCELERROR: Accepted but ignored
+        CATALOG: Accepted but ignored
+        DATASET(BY): Not supported
+        DATASET(EXCLUDE): Supported
+        DATASET(FILTERDD): Not supported
+        DATASET(INCLUDE): Supported
+        FREESPACE: Accepted but ignored (not applicable on target)
+        FULL: Accepted but ignored
+        INDDNAME: Supported
+        OUTDDNAME: Accepted but ignored (not applicable on target)
+        PERCENTUTILIZED: Accepted but ignored (not applicable on target)
+        RENAME: Supported
+        RENAMEUNCONDITIONAL: Supported
+        REPLACE: Supported
+        REPLACEUNCONDITIONAL: Supported
+        SPHERE: Accepted but ignored (not applicable on target)
+        TGTALLOC: Accepted but ignored (not applicable on target)
+        TOLERATE: Accepted but ignored
+        TRACKS: Accepted but ignored (not applicable on target)
+        WAIT: Accepted but ignored
+DFSORT/SORT/ICEMAN/SYNCSORT:
+  Supported Statements:
+    ALTSEQ:
+      Options/Clauses:
+        "CODE=(fftt,\u2026)": Supported
+    DEBUG:
+      Options/Clauses:
+        ABEND / NOABEND: Accepted but ignored
+        ABSTP: Accepted but ignored
+        BSAM: Accepted but ignored
+        CFW / NOCFW: Accepted but ignored
+        CTR2=n / CTR3=n / CTR4=n / CTR5=n: Accepted but ignored
+        "EFSDPBFR=(n,\u2026)": Accepted but ignored
+        "EFSDPPAFT=(n,\u2026)": Accepted but ignored
+        EQUCOUNT: Accepted but ignored
+        ESTAE / NOESTAE: Accepted but ignored
+        NOASSIST: Accepted but ignored
+    END:
+      Options/Clauses: {}
+    INCLUDE:
+      Options/Clauses:
+        COND=(expression): Supported (but see below)
+        COND=ALL: Supported
+        COND=NONE: Supported
+        FORMAT=f: Supported
+    INREC:
+      Options/Clauses:
+        "BUILD/FIELDS=(\u2026)": Supported (but see below)
+        FINDREP: Supported (but changes to length are not allowed)
+        IFOUTLEN: Not supported
+        IFTHEN: Not supported
+        "OVERLAY=(\u2026)": Supported (but see below)
+        PARSE: Not supported
+    JOIN:
+      Options/Clauses:
+        F1: Supported
+        F2: Supported
+        ONLY: Supported
+        UNPAIRED: Supported
+    JOINKEYS:
+      Options/Clauses:
+        F1=ddname: Supported
+        F2=ddname: Supported
+        "FIELDS=(\u2026)": Supported
+        FILE(S)=F1/F2: Supported
+        "INCLUDE=(\u2026)": Supported (but see below)
+        INCLUDE=ALL/NONE: Supported
+        NOSEQCK: Accepted but ignored
+        "OMIT=(\u2026)": Supported (but see below)
+        OMIT=ALL/NONE: Supported
+        SORTED: Supported
+        STOPAFT=n: Accepted but ignored
+        TASKID=xxx: Supported
+        TYPE: Accepted but ignored
+    MERGE:
+      Options/Clauses:
+        EQUALS/NOEQUALS: Supported
+        "FIELDS=(\u2026)": Supported
+        FIELDS=COPY: Supported
+        FILES=n: Accepted but ignored
+        FILSZ=n: Accepted but ignored
+        FORMAT=f: Supported
+        "ORDER=\u2026": Accepted but ignored
+        SIZE=n: Accepted but ignored
+        SKIPREC=n: Supported
+        STOPAFT=n: Supported
+        "WORK=\u2026": Accepted but ignored
+        Y2PAST=n: Accepted but ignored
+    OMIT:
+      Options/Clauses:
+        COND=(expression): Supported (but see below)
+        COND=ALL: Supported
+        COND=NONE: Supported
+        FORMAT=f: Supported
+    OPTION:
+      Options/Clauses:
+        ABEND/NOABEND: Supported
+        ASCII/EBCDIC: Supported (Astadia extension)
+        CENTURY/CENTWIN/Y2PAST=n: Supported
+        COPY: Supported
+        EQUALS/NOEQUALS: Supported
+        FILSZ=n: Accepted but ignored
+        LONGIN=ABEND/KEEP/TRUNCATE: Supported (Astadia extension)
+        MSGCON=ALL/CRITICAL/NONE: Accepted but ignored
+        MSGDDN=xxx: Supported
+        MSGPRT=ALL/CRITICAL/NONE: Accepted but ignored
+        NULLOUT=RC0/RC4/RC16: Supported
+        OVFLO=RC0/RC4/RC16: Supported
+        PAD=RC0/RC4/RC16: Supported
+        PRINT=ALL: Accepted but ignored
+        SHORTIN=ABEND/KEEP/PAD: Supported (Astadia extension)
+        SHORTPAD=hh: Supported (Astadia extension)
+        SIZE=n: Accepted but ignored
+        SKIPREC=n: Supported
+        SORTDD=xxx: Supported
+        SORTIN=xxx: Supported
+        SORTOUT=xxx: Supported
+        SPANINC=RC0/RC4/RC16: Accepted but ignored
+        STOPAFT=n: Supported
+        TRUNC=RC0/RC4/RC16: Supported
+        ZDPRINT/NZDPRINT: Supported
+    OUTFIL:
+      Options/Clauses:
+        ACCEPT: Not supported
+        BLKCCH1: Accepted but ignored
+        BLKCCH2: Accepted but ignored
+        BLKCCT1: Accepted but ignored
+        "BLKSIZE=\u2026": Accepted but ignored
+        "BUFLIM=\u2026": Accepted but ignored
+        "BUFOFF=\u2026": Accepted but ignored
+        BUILD/OUTREC: Supported (but see below)
+        "CARDS=\u2026": Accepted but ignored
+        "CLOSE=\u2026": Accepted but ignored
+        CONVERT: Accepted but ignored
+        DISK: Accepted but ignored
+        ENDREC: Supported
+        ESDS: Accepted but ignored
+        EXIT: Accepted but ignored
+        "FILES=(\u2026)": Supported
+        FINDREP: Supported (but changes to length are not allowed)
+        "FNAMES=(\u2026)": Supported
+        FREEOUT: Accepted but ignored
+        FTOV: Supported
+        "HEADER1=(\u2026)": Supported
+        "HEADER2=(\u2026)": Supported
+        IFTHEN: Not supported
+        IFTRAIL: Not supported
+        "INCLUDE=(\u2026)": Supported (but see below)
+        INCLUDE=ALL/NONE: Supported
+        KSDS: Accepted but ignored
+        LINES=n: Supported
+        "LRECL=\u2026": Accepted but ignored
+        NOTPMK: Accepted but ignored
+        NULLOFL=RC0/RC4/RC16: Supported
+        "OMIT=(\u2026)": Supported (but see below)
+        OMIT=ALL/NONE: Supported
+        "OPEN=\u2026": Accepted but ignored
+        OUTPUT: Accepted but ignored
+        "PAGES=\u2026": Accepted but ignored
+        PARSE: Not supported
+        PRINT: Accepted but ignored
+        PUNCH: Accepted but ignored
+        REMOVECC: Supported
+        REPEAT=n: Supported
+        REUSE: Accepted but ignored
+        RRDS: Accepted but ignored
+        SAMPLE: Supported
+        SAVE: Supported
+        "SECTIONS=(\u2026)": Supported
+        SPAN: Accepted but ignored
+        SPLIT: Supported
+        SPLIT1R=n: Supported
+        SPLITBY=n: Supported
+        STARTREC: Supported
+        SYSLST: Accepted but ignored
+        TAPE: Accepted but ignored
+        TOL: Accepted but ignored
+        "TRAILER1=(\u2026)": Supported
+        "TRAILER2=(\u2026)": Supported
+        VLFILL=c: Partially supported (always uses spaces)
+        VLTRAIL=s: Accepted but ignored
+        VLTRIM=c: Accepted but ignored
+        VTOF: Supported
+    OUTREC:
+      Options/Clauses:
+        "BUILD/FIELDS=(\u2026)": Supported (but see below)
+        FINDREP: Supported (but changes to length are not allowed)
+        IFOUTLEN: Not supported
+        IFTHEN: Not supported
+        "OVERLAY=(\u2026)": Supported (but see below)
+        PARSE: Not supported
+    RECORD:
+      Options/Clauses:
+        LENGTH=n: Accepted but ignored
+        TYPE=F/V: Supported
+    REFORMAT:
+      Options/Clauses:
+        "FIELDS=(\u2026)": Supported
+        FILL=c: Supported
+    SORT:
+      Options/Clauses:
+        CKPT: Accepted but ignored
+        "DYNALLOC=\u2026": Accepted but ignored
+        EQUALS/NOEQUALS: Supported
+        "FIELDS=(\u2026)": Supported
+        FIELDS=COPY: Supported
+        FILSZ=n: Accepted but ignored
+        FORMAT=f: Supported
+        "ORDER=\u2026": Accepted but ignored
+        SIZE=n: Accepted but ignored
+        SKIPREC=n: Supported
+        STOPAFT=n: Supported
+        "WORK=\u2026": Accepted but ignored
+        Y2PAST=n: Accepted but ignored
+    SUM:
+      Options/Clauses:
+        "FIELDS=(\u2026)": Supported
+        FIELDS=NONE: Supported
+        FORMAT=f: Supported
+IDCAMS:
+  Supported Statements:
+    ALTER:
+      Options/Clauses:
+        NEWNAME: Supported
+    DEFINE:
+      Options/Clauses:
+        ALTERNATEINDEX:
+          CATALOG/CAT: Supported
+          KEYCOLLATION: Supported
+          KEYPARTS: Supported
+          KEYS: Supported
+          NAME: Supported
+          RELATE: Supported
+          UNIQUEKEY/UNQKY: Supported
+        CLUSTER:
+          CATALOG/CAT: Supported
+          INDEXED/IDX: Supported
+          KEYS: Supported
+          NAME: Supported
+          NOREUSE: Supported
+          RECORDFORMAT/RECFM: Supported
+          RECORDSIZE/RECSZ: Supported
+          REUSE: Supported
+        PATH: Not currently supported
+    DELETE:
+      Options/Clauses:
+        CATALOG/CAT: Supported
+        CLUSTER/CL: Supported
+        NONVSAM/NVSAM: Supported
+    DO-END:
+      Options/Clauses: {}
+    IF-THEN-ELSE:
+      Options/Clauses: {}
+    LISTCAT:
+      Options/Clauses:
+        ENTRIES*: Supported
+    PRINT:
+      Options/Clauses:
+        CHARACTER/CHAR: Supported
+        COUNT: Supported
+        DUMP: Supported
+        FROMADDRESS: Supported
+        FROMKEY: Supported
+        FROMNUMBER: Supported
+        HEX: Supported
+        INFILE: Supported
+        SKIP: Supported
+        TOADDRESS: Supported
+        TOKEY: Supported
+        TONUMBER: Supported
+    REPRO:
+      Options/Clauses:
+        FROMADDRESS: Supported
+        FROMKEY: Supported
+        FROMNUMBER: Supported
+        INFILE: Supported
+        OUTFILE: Supported
+        TOADDRESS: Supported
+        TOKEY: Supported
+        TONUMBER: Supported
+    SET:
+      Options/Clauses: {}
+IEBCOPY:
+  Supported Statements:
+    COPYGRP:
+      Options/Clauses:
+        INDD: Supported
+        OUTDD: Supported
+IEBGENER:
+  Supported Statements:
+    GENERATE:
+      Options/Clauses:
+        SYSUT1: Supported
+        SYSUT2: Supported
+        SYSPRINT: Supported
+        SYSIN: Supported
+        RECORD FORMAT: Accepted but Ignored
+        BLOCK SIZE: Accepted but Ignored
+        LABEL: Not Supported
+        DENSITY: Not Supported
+IEBPTPCH:
+IEFBR14:
+DSNUTILB:
+  Supported Statements:
+    LISTDEF:
+      Options/Clauses:
+        EXCLUDE: Accepted but Ignored
+        INCLUDE: Supported
+        ANY/BASE/LOB/XML: Accepted but Ignored
+    LOAD:
+      Options/Clauses:
+        ASCII/EBCDIC/UNICODE: Accepted but Ignored
+        CCSID(n,n,n): Accepted but Ignored
+        COPYDDN(...): Accepted but Ignored
+        DISCARDDN ddname: Accepted but Ignored
+        ENFORCE CONSTRAINTS/NO: Accepted but Ignored
+        ERRDDN ddname: Accepted but Ignored
+        FLOAT(S390/IEEE): Accepted but Ignored
+        INDDN ddname: Supported
+        INTO TABLE table: Supported
+        KEEPDICTIONARY: Accepted but Ignored
+        LOG YES/NO: Accepted but Ignored
+        MAPDDN ddname: Accepted but Ignored
+        NOCOPYPEND: Accepted but Ignored
+        NUMRECS n: Accepted but Ignored
+        RECOVERYDDN(...): Accepted but Ignored
+        REPLACE: Supported
+        RESUME YES/NO: Accepted but Ignored
+        SORTKEYS n/NO: Accepted but Ignored
+        STATISTICS: Accepted but Ignored (only if INDEX(ALL) and/or TABLE(ALL))
+    OPTIONS:
+      Options/Clauses:
+        EVENT (ITEMERROR, SKIP/HALT): Accepted but Ignored
+        EVENT (WARNING, RC0/RC4/RC8): Accepted but Ignored
+        FILSZ: Not Supported
+        KEY xxx: Not Supported
+        LISTDEFDD: Accepted but Ignored
+        'OFF': Accepted but Ignored
+        PREVIEW: Accepted but Ignored
+        TEMPLATEDD: Accepted but Ignored
+    REORG TABLESPACE:
+      Options/Clauses:
+        COPYDDN(ddname): Accepted but Ignored
+        LIST list-name: Supported (PARALLEL not supported)
+        database.tablespace: Supported (database ignored, PART not supported)
+    REPAIR TABLESPACE:
+      Options/Clauses:
+        Statement: Not Supported
+    RUNSTATS TABLESPACE:
+      Options/Clauses:
+        HISTORY NONE/ALL/ACCESSPATH/SPACE: Accepted but Ignored
+        INDEX(ALL): Accepted but Ignored
+        LIST listdef-name: Supported
+        REPORT YES/NO: Accepted but Ignored
+        SHRLEVEL CHANGE/REFERENCE: Accepted but Ignored
+        TABLE(ALL): Accepted but Ignored
+        UPDATE ALL/ACCESSPATH/SPACE/NONE: Accepted but Ignored
+    TEMPLATE:
+      Options/Clauses:
+        DATACLAS name: Accepted but Ignored
+        DISP(...): Accepted but Ignored
+        DSN: Supported
+        GDGLIMIT n: Accepted but Ignored
+        MAXPRIME n: Accepted but Ignored
+        PCTPRIME n: Accepted but Ignored
+        SPACE: Accepted but Ignored
+        STACK YES/NO: Accepted but Ignored
+        UNCNT n: Accepted but Ignored
+        UNIT name: Accepted but Ignored
+    UNLOAD:
+      Options/Clauses:
+        ASCII/EBCDIC/UNICODE: Accepted but Ignored
+        FROM TABLE table [HEADER NONE]: Supported (only with TABLESPACE)
+        LIST listdef-name: Supported
+        NOPAD: Accepted but Ignored
+        TABLESPACE [db.]name: Supported
+        PUNCHDDN: Supported
+        UNLDDN: Supported
+

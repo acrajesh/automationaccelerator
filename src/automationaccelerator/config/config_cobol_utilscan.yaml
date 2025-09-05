@@ -1,0 +1,27 @@
+# Configuration file for COBOL Utility Scan Tool
+
+directories:
+  COBOL: "C:\Users\rajesh.kumar\Documents\aitest\deliveries\snapshot-1\cobol-programs"
+
+utilities_file: "H:\factory\projects\test\automation\Housekeeping_Tool_Distribution\config\cobol_utilities.txt"  # List of 3rd party utility names, one per line
+
+output:
+  name: "cobol-utilities"
+  versioning: true
+
+logging:
+  log_file: "cobol_utilscan.log"
+  log_location: "H:\factory\projects\test\automation\Housekeeping_Tool_Distribution\logs"
+
+excel_format:
+  bold_headers: true
+  auto_size_columns: true
+  wrap_text: true
+
+performance:
+  parallel_processing: true
+  max_threads: 10
+
+error_handling:
+  log_scan_anomalies: true
+  handle_corrupted_files: true

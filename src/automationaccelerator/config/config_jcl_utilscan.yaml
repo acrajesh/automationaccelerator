@@ -1,0 +1,46 @@
+# Configuration file for Utility Scan Tool
+
+directories:
+  JCL: 'C:\Users\rajesh.kumar\Documents\aitest\deliveries\snapshot-1\jcls'     # Update with the actual JCL directory path
+  PROC: 'C:\Users\rajesh.kumar\Documents\aitest\deliveries\snapshot-1\procs'   # Update with the actual PROC directory path
+  CNTLLIB: 'C:\Users\rajesh.kumar\Documents\aitest\deliveries\snapshot-1\cntllib'  # Update with the actual CNTLLIB directory path
+
+default_utilities:
+  - ADRDSSU
+  - DFSORT
+  - SORT
+  - ICEMAN
+  - SYNCSORT
+  - ICETOOL
+  - IDCAMS
+  - IEBCOPY
+  - IEBGENER
+  - IKJEFT01
+  - IKJEFT1A
+  - IKJEFT1B
+  - ISRSUPC
+  - FTP
+  
+utilities_file: 'H:\factory\projects\test\automation\Housekeeping_Tool_Distribution\config\jcl_utilities.txt'  # Path to the utility list file
+
+output:
+  name: "campc"  # Application name for naming the output Excel file
+  versioning: true  # If true, increments version numbers (v1, v2, etc.)
+
+logging:
+  log_file: 'utilityscan.log'  # Name of the log file
+  log_location: 'H:\factory\projects\test\automation\Housekeeping_Tool_Distribution\logs' # Directory where logs should be stored
+
+excel_format:
+  bold_headers: true  # Ensures headers are bold
+  auto_size_columns: true  # Automatically resizes columns for better readability
+  wrap_text: true  # Enables text wrapping in cells
+
+performance:
+  parallel_processing: true  # Enables multi-threading for faster execution
+  max_threads: 10  # Maximum number of threads to use
+
+error_handling:
+  report_missing_utilities: true  # If true, creates a "Utility not found" sheet when a utility is missing
+  log_scan_anomalies: true  # If true, logs issues like incorrect file format, encryption errors, etc.
+  handle_corrupted_files: true  # If true, logs and skips unreadable/corrupt files

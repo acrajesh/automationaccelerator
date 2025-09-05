@@ -1,0 +1,2 @@
+[console_scripts]
+autoaccel = automationaccelerator.__main__:main
