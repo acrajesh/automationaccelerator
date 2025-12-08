@@ -23,9 +23,9 @@
 
 ## 1. Introduction
 
-### What Is the Accelerator Tool House?
+### What Is the Accelerator House?
 
-The **Accelerator Tool House** is a collection of analysis and reporting utilities designed to support mainframe modernization projects. Previously referred to as "housekeeping tools," these accelerators help teams discover what's really happening in legacy environments and turn scattered code, logs, and configurations into actionable intelligence and architecture-ready documentation.
+The **Accelerator  House** is a collection of analysis and reporting utilities designed to support mainframe modernization projects. Previously referred to as "housekeeping tools," these accelerators help teams discover what's really happening in legacy environments and turn scattered code, logs, and configurations into actionable intelligence and architecture-ready documentation.
 
 **In plain terms**: When organizations move applications off mainframes, they face challenges like understanding what external tools their code depends on, tracking conversion progress, and identifying potential risks. The Accelerator Tool House consolidates that scattered information into clear, shareable Excel reports and inventories so that engineers, analysts, and executives can make confident decisions about migration scope, sequencing, and risk.
 
