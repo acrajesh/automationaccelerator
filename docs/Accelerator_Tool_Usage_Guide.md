@@ -25,16 +25,19 @@
 
 ### What Is the Accelerator Tool House?
 
-The **Accelerator Tool House** is a collection of analysis and reporting utilities designed to support mainframe modernization projects. Previously referred to as "housekeeping tools," these accelerators help teams assess, analyze, and document critical aspects of legacy codebases and conversion processes.
+The **Accelerator Tool House** is a collection of analysis and reporting utilities designed to support mainframe modernization projects. Previously referred to as "housekeeping tools," these accelerators help teams discover what's really happening in legacy environments and turn scattered code, logs, and configurations into actionable intelligence and architecture-ready documentation.
 
-**In plain terms**: When organizations move applications off mainframes, they face challenges like understanding what external tools their code depends on, tracking conversion progress, and identifying potential risks. The Accelerator Tool House provides automated reports that answer these questions—turning complex technical data into clear, shareable Excel reports that everyone from engineers to executives can use for planning and decision-making.
+**In plain terms**: When organizations move applications off mainframes, they face challenges like understanding what external tools their code depends on, tracking conversion progress, and identifying potential risks. The Accelerator Tool House consolidates that scattered information into clear, shareable Excel reports and inventories so that engineers, analysts, and executives can make confident decisions about migration scope, sequencing, and risk.
+
+By generating structured knowledge bases from legacy artifacts, these accelerators support modernization planning, reduce downtime risk, and help delivery pipelines move forward with confidence.
 
 ### Why This Matters to Your Project
 
-- **Reduce risk**: Identify hidden dependencies and problem areas before they cause delays
-- **Improve planning**: Get accurate inventories and impact assessments for realistic timelines
-- **Enable transparency**: Generate reports that can be shared across teams and with leadership
-- **Save time**: Automate analysis that would otherwise require hours of manual review
+- **Discover applications and build knowledge bases**: Turn legacy scripts, job streams, and logs into a living, structured knowledge base that supports architecture diagrams, runbooks, and handover documentation
+- **Generate actionable intelligence**: Transform complex technical data into clear insights that drive planning decisions, risk assessments, and resource allocation
+- **Reduce risk and downtime**: Identify hidden dependencies and problem areas before they cause production incidents or migration delays
+- **Simplify modernization programs**: Feed clean, structured data into your modernization pipeline so teams can focus on remediation and redesign, not manual data gathering
+- **Support delivery pipelines with confidence**: Enable transparency across technical and business stakeholders with reports that can be understood and discussed at any level
 
 ### Accelerators at a Glance
 
@@ -296,17 +299,17 @@ Enter your choice (1-5):
 
 ### For Non-Technical Readers
 
-**What this accelerator tells you**: Which third-party software utilities (tools from vendors like Syncsort, CA, BMC, etc.) are being used in your JCL job streams, COBOL programs, or Assembler code.
+**What this accelerator tells you**: Which third-party software utilities (tools from vendors such as Broadcom/CA, BMC, Syncsort, etc.) are being used in your JCL job streams, COBOL programs, or Assembler code.
 
-**Why it matters**: Third-party utilities often require separate licensing agreements, may not have equivalents in your target platform, or need special migration handling. Knowing what you depend on upfront helps you budget, plan timelines, and avoid surprises.
+**Why it matters**: Over time, applications accumulate dependencies on a mix of in-house tools and external utilities. These dependencies can drive licensing cost, security exposure, and migration complexity. This accelerator **discovers and catalogs those utilities**, turning ad‑hoc job streams and scripts into **structured knowledge** your teams can use for risk reviews, vendor discussions, and modernization planning.
 
-**How to use the output**: The generated report can be shared with procurement (for licensing discussions), architects (for replacement planning), and project managers (for scope and risk assessment).
+**How to use the output**: Treat the generated report as part of your broader **application knowledge base**. Share it with procurement (for licensing and contract checks), architects (to design replacement strategies for utilities that won't carry forward), and project managers (to size and prioritize migration work that depends on specific third-party tools).
 
 ---
 
 ### Purpose (Technical)
 
-Scans JCL, COBOL, or Assembler source files to identify references to third-party utilities. This helps assess external dependencies before migration or refactoring.
+Scans JCL, COBOL, or Assembler source files to identify references to third-party utilities. This consolidates scattered usage across jobs and programs into a single, searchable view of external dependencies before migration or refactoring.
 
 ### Submenu
 
@@ -441,9 +444,9 @@ Required file 'config_asm_utilscan.yaml' not found in /path/to/config. Please pl
 
 **What this accelerator tells you**: An inventory of all tools installed in a specific directory, along with their version numbers.
 
-**Why it matters**: During modernization, you need consistent tooling across environments. This report helps verify that development, test, and production environments have the same tool versions—and helps identify outdated or missing tools that could cause problems.
+**Why it matters**: During modernization, you need consistent tooling across environments. This report helps verify that development, test, and production environments have the same tool versions—and helps identify outdated or missing tools that could cause problems. It supports environment readiness checks before modernization and provides audit/compliance evidence.
 
-**How to use the output**: Share the Excel report with environment managers, DevOps teams, or vendors to validate environment readiness. It's also useful for audit and compliance documentation.
+**How to use the output**: Share the Excel report with environment managers, DevOps teams, or vendors to validate environment readiness. Compare reports from different environments (dev, test, prod) to ensure consistency. Use as evidence for audit and compliance reviews.
 
 ---
 
@@ -514,15 +517,15 @@ Please enter an application name to prefix the report file (e.g. myapp): acme
 
 **What this accelerator tells you**: A structured summary of what happened during code conversion—including errors, warnings, and statistics—extracted from verbose log files.
 
-**Why it matters**: Conversion tools generate lengthy, technical log files that are difficult to review manually. This accelerator transforms those logs into organized Excel reports, making it easy to see how many files converted successfully, which ones failed, and what issues need attention.
+**Why it matters**: Conversion tools generate lengthy, technical log files that are difficult to review manually. This accelerator **turns those scattered log messages into a focused, filterable report**, making it far easier to **pinpoint root causes** of failures and understand the overall health of your conversion pipeline.
 
-**How to use the output**: Use the Excel report in status meetings to show conversion progress. Filter by error type to prioritize fixes. Share with stakeholders to demonstrate quality metrics or identify blockers.
+**How to use the output**: Use the Excel report in status meetings to show conversion progress. Filter by error type to prioritize fixes. Share with stakeholders to demonstrate quality metrics or identify blockers. Track conversion quality trends over time to support delivery pipelines with confidence.
 
 ---
 
 ### Purpose (Technical)
 
-Parses conversion log files generated during mainframe-to-target migrations and produces structured Excel reports. This helps teams quickly identify errors, warnings, and statistics without manually reading verbose logs.
+Parses conversion log files generated during mainframe-to-target migrations and produces structured Excel reports. This **consolidates scattered diagnostic data** from verbose logs, helping teams quickly identify errors, warnings, and statistics without manual analysis.
 
 ### Submenu
 
@@ -539,6 +542,14 @@ Enter your choice (1-4):
 ---
 
 ### 8.1 JCL Conversion Log Report
+
+#### For Non-Technical Readers
+
+**What this accelerator tells you**: A structured view of what happened when JCL (Job Control Language) jobs were processed by your conversion or modernization tools—how many jobs ran cleanly, which ones failed, and what types of issues were detected.
+
+**Why it matters**: Raw JCL conversion logs are long and technical. This accelerator **turns those scattered log messages into a focused, filterable report**, making it far easier to **pinpoint root causes** of failures and understand the overall health of your conversion pipeline.
+
+**How to use the output**: Use the Excel report to monitor conversion progress and stability. Filter by error or warning type to identify systemic problems (for example, missing procedures or unsupported utilities). Bring the summarized metrics into status meetings or dashboards to show where work is needed and how quality is trending over time.
 
 #### Module
 
@@ -589,6 +600,14 @@ JCL Conversion Log Analysis completed. Report saved to /Users/johndoe/.autoaccel
 
 ### 8.2 COBOL Conversion Log Report
 
+#### For Non-Technical Readers
+
+**What this accelerator tells you**: A structured summary of what happened when COBOL code was passed through an automated conversion or modernization tool—how many components succeeded, which ones failed, and what types of issues were detected.
+
+**Why it matters**: Conversion tools often produce long, highly technical log files that are difficult to read. This accelerator **turns that scattered diagnostic data into a focused, navigable report**, making it much easier to **pinpoint root causes** of failed conversions, track progress over time, and keep modernization pipelines moving with confidence.
+
+**How to use the output**: Use the Excel report to support status meetings, steering committees, and defect triage. Filter by error or warning type to prioritize work. Combine multiple reports over time to show how your conversion quality is improving as issues are resolved.
+
 #### Module
 
 `modules.cobol_convertlog_scanner`
@@ -626,6 +645,14 @@ COBOL Conversion Log Analysis completed. Report saved to /Users/johndoe/.autoacc
 ---
 
 ### 8.3 Assembler Conversion Log Report
+
+#### For Non-Technical Readers
+
+**What this accelerator tells you**: A summarized view of how Assembler programs fared when they were put through automated conversion or analysis tools—showing which programs converted successfully, which did not, and the key issues reported.
+
+**Why it matters**: Assembler code is often some of the most complex and least understood logic in a mainframe estate. Its conversion logs can be especially dense. This accelerator **consolidates that low-level diagnostic information into an accessible report**, helping teams **identify patterns and root causes** behind failed conversions and quantify the complexity of Assembler migration.
+
+**How to use the output**: Share the report with technical leads and architects to prioritize which Assembler components need attention first. Use it to estimate remediation effort, plan sequencing (e.g., tackle the highest-error modules early), and communicate Assembler-related risk to stakeholders.
 
 #### Module
 
@@ -672,9 +699,9 @@ Assembler Conversion Log Analysis completed. Report saved to /Users/johndoe/.aut
 
 **What this accelerator tells you**: Which programs use IMS (IBM's hierarchical database system), what types of database calls they make, and how complex the IMS usage is across your codebase.
 
-**Why it matters**: IMS is one of the most complex components to migrate from mainframes. Understanding how extensively your applications use IMS—and which specific features they rely on—is critical for planning database migration strategies, estimating effort, and identifying high-risk programs.
+**Why it matters**: IMS is one of the most complex components to migrate from mainframes. Understanding how extensively your applications depend on IMS—and which specific features they rely on—is critical for estimating IMS migration complexity, prioritizing work, and supporting architecture decisions on database strategies.
 
-**How to use the output**: Share the IMS Impact Report with database architects, migration planners, and project leadership. Use it to prioritize which programs to tackle first, estimate the complexity of database conversion work, and identify programs that may need significant refactoring.
+**How to use the output**: Share the IMS Impact Report with database architects, migration planners, and project leadership. Use it to prioritize which programs to tackle first, estimate the complexity of database conversion work, and identify programs that may need significant refactoring. The structured data supports architecture documentation and feeds into modernization planning discussions.
 
 ---
 
@@ -841,7 +868,7 @@ These scenarios walk through common use cases from start to finish. Each include
 
 **Output**: Report in `~/.autoaccel/output/jcl_utilities/`
 
-**Using the output**: Open the Excel report and review the list of detected utilities. Share with procurement to validate licensing requirements. Share with architects to identify utilities that need replacement strategies. Include counts in project planning documents to justify scope.
+**Using the output in practice**: Open the Excel report and review the list of detected utilities. Share with procurement to validate licensing requirements and negotiate contracts. Share with architects to identify utilities that need replacement strategies for the target platform. Include utility counts in project planning documents to justify scope and budget. Use in vendor discussions to understand migration tool requirements and compatibility.
 
 ---
 
@@ -860,7 +887,7 @@ These scenarios walk through common use cases from start to finish. Each include
 
 **Output**: Excel report in `~/.autoaccel/output/cobol_conversion_logs/`
 
-**Using the output**: Filter the Excel report by severity (errors vs. warnings) to prioritize fixes. Use summary statistics in status reports to show conversion progress over time. Identify patterns in failures to address systemic issues.
+**Using the output in practice**: Filter the Excel report by severity (errors vs. warnings) to prioritize fixes. Use summary statistics in status reports to show conversion progress over time. Identify patterns in failures to address systemic issues. Present metrics in steering committee meetings to demonstrate quality trends and justify resource allocation for remediation work.
 
 ---
 
@@ -881,7 +908,7 @@ These scenarios walk through common use cases from start to finish. Each include
 
 **Output**: `IMS_Impact_Report.xlsx` in `~/.autoaccel/output/ims_analysis/`
 
-**Using the output**: Review the summary sheet for overall IMS complexity. Identify programs with the highest IMS call counts for prioritization. Share with database architects to plan the IMS-to-target-database migration approach. Use the data in steering committee presentations to explain database migration complexity.
+**Using the output in practice**: Review the summary sheet for overall IMS complexity. Identify programs with the highest IMS call counts for prioritization. Share with database architects to plan the IMS-to-target-database migration approach. Use the data in steering committee presentations to explain database migration complexity and justify specialized resources. Feed the structured data into architecture documentation and migration wave planning.
 
 ---
 
@@ -900,7 +927,7 @@ These scenarios walk through common use cases from start to finish. Each include
 
 **Output**: `prodenv_tools_report.xlsx` in `~/.autoaccel/output/tool_versions/`
 
-**Using the output**: Compare reports from different environments (dev, test, prod) to ensure consistency. Use as evidence for audit or compliance reviews. Share with vendors to validate tooling requirements are met.
+**Using the output in practice**: Compare reports from different environments (dev, test, prod) to ensure consistency and identify discrepancies. Use as evidence for audit and compliance reviews. Share with vendors to validate tooling requirements are met before major deployments. Include in environment readiness assessments and handover documentation.
 
 [Back to top](#accelerator-tool-usage-guide)
 
